@@ -4,23 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Button Gradient</title>
 </head>
 <body>
     <h1>Change Gradient</h1>
     <div>
-        <label>
-            <input type="checkbox" name="gradient" value="pink-blue">
-            Pink to Blue
-        </label>
-        <label>
-            <input type="checkbox" name="gradient" value="green-yellow">
-            Green to Yellow
-        </label>
-        <label>
-            <input type="checkbox" name="gradient" value="purple-orange">
-            Purple to Orange
-        </label>
+        <!-- ボタンでグラデーション変更 -->
+        <button type="button" data-gradient="pink-blue">Pink to Blue</button>
+        <button type="button" data-gradient="green-yellow">Green to Yellow</button>
+        <button type="button" data-gradient="purple-orange">Purple to Orange</button>
     </div>
 
     <svg id="gradient-box" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -32,6 +24,7 @@
         </defs>
         <rect width="100" height="100" fill="url(#dynamic-gradient)" />
     </svg>
+
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

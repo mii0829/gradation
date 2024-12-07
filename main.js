@@ -1,23 +1,19 @@
-const checkboxes = document.querySelectorAll('input[name="gradient"]');
+const buttons = document.querySelectorAll('button[data-gradient]');
 const gradientStops = document.querySelectorAll('#dynamic-gradient stop');
 
-// Define color combinations
+// それぞれのボタンに色を設定しておく
 const gradients = {
     "pink-blue": ["pink", "blue"],
     "green-yellow": ["green", "yellow"],
     "purple-orange": ["purple", "orange"]
 };
 
-checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-        // Uncheck other checkboxes
-        checkboxes.forEach(cb => cb !== checkbox && (cb.checked = false));
-
-        // Update the gradient colors
-        if (checkbox.checked) {
-            const colors = gradients[checkbox.value];
-            gradientStops[0].style.stopColor = colors[0];
-            gradientStops[1].style.stopColor = colors[1];
-        }
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        // ボタンに設定されたデータ属性に基づいて色を変更
+        const gradientKey = button.getAttribute('data-gradient');
+        const colors = gradients[gradientKey];
+        gradientStops[0].style.stopColor = colors[0];
+        gradientStops[1].style.stopColor = colors[1];
     });
 });
